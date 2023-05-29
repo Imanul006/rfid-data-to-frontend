@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+
+    // Receive stream data from the server
+    socket.on('streamData', (data) => {
+      // Process the received data as needed
+      console.log('Received data:', data);
+
+      // Access the body element
+      const body = document.querySelector('body');
+
+      // Create a new paragraph element
+      const paragraph = document.createElement('p');
+
+      // Set the text content of the paragraph to the received data
+      paragraph.textContent = data;
+
+      // Append the paragraph to the body
+      body.appendChild(paragraph);
+    });
+  </script>
+</head>
+<body>
+  <!-- Your HTML content here -->
+</body>
+</html>
+
